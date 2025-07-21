@@ -1,0 +1,14 @@
+local c_ = 0
+ for _,v in next,plr.Backpack:GetChildren() do
+     c_=c_+1
+       if c_>=10 then rs:wait() c_=0 end
+          if plr.Character and plr.Character:FindFirstChild'Head' and v.Name == 'Kawaii Revolver' and v:FindFirstChild'ReplicateRemote' and not v:FindFirstChild'ClientCD' and v:FindFirstChild'Barrel' and v.Barrel:FindFirstChild'Attachment' then
+            AddCd(v,2)
+            v.Parent = plr.Character
+            Shoot(v.Barrel.Attachment.WorldPosition,mouse.Hit.p,t)
+             v.ReplicateRemote:FireServer(mouse.Hit.p)
+             rs:wait()
+             v.Parent = plr.Backpack
+            end
+        end
+    end
