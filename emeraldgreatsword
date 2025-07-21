@@ -1,0 +1,10 @@
+local Player = game:GetService("Players").LocalPlayer
+local MenuScreen = game.Players.LocalPlayer.PlayerGui["Menu Screen"]
+
+local character = Player.Character or Player.CharacterAdded:Wait()
+if character:FindFirstChild("Loaded") then
+    character.Loaded:Destroy()
+end
+
+Player.PlayerGui["Menu Screen"].RemoteEvent:FireServer("Emerald Greatsword")
+MenuScreen.Enabled = False
