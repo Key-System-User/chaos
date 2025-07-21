@@ -22,6 +22,7 @@ local Tabs = {
 }
 
 local LeftGroupBox = Tabs.Main:AddLeftGroupbox("Give Items", "boxes")
+local Event = Tabs.Main:AddLeftGroupbox("Event", "boxes")
 local Others = Tabs.Main:AddLeftGroupbox("Others", "boxes")
 
 LeftGroupBox:AddButton({
@@ -63,8 +64,21 @@ LeftGroupBox:AddButton({
 	Risky = false,
 })
 
+LeftGroupBox:AddButton({
+	Text = "Holloween Dagger",
+	Func = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Key-System-User/chaos/refs/heads/main/holloweendagger"))()
+	end,
+	DoubleClick = false,
+	Tooltip = "Gives Holloween Dagger",
+	DisabledTooltip = "Gives Holloween Dagger",
+	Disabled = false,
+	Visible = true,
+	Risky = false,
+})
+
 Others:AddButton({
-	Text = "Shoot Without Revolver",
+	Text = "Shoot Without Revolver ( Key : V | Only Works With Level 8 Executors )",
 	Func = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Key-System-User/chaos/refs/heads/main/shootwithoutrevolver"))()
 	end,
@@ -89,6 +103,19 @@ Others:AddButton({
 	Risky = false,
 })
 
+Event:AddButton({
+	Text = "Finish Event",
+	Func = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Key-System-User/chaos/refs/heads/main/finishevent"))()
+	end,
+	DoubleClick = false,
+	Tooltip = "Finish Event",
+	DisabledTooltip = "Finish Event",
+	Disabled = false,
+	Visible = true,
+	Risky = false,
+})
+
 local MenuGroup = Tabs["UI Settings"]:AddLeftGroupbox("Menu", "wrench")
 
 MenuGroup:AddToggle("KeybindMenuOpen", {
@@ -100,7 +127,7 @@ MenuGroup:AddToggle("KeybindMenuOpen", {
 })
 MenuGroup:AddToggle("ShowCustomCursor", {
 	Text = "Custom Cursor",
-	Default = true,
+	Default = false,
 	Callback = function(Value)
 		Library.ShowCustomCursor = Value
 	end,
@@ -125,7 +152,7 @@ MenuGroup:AddDropdown("DPIDropdown", {
 })
 MenuGroup:AddDivider()
 MenuGroup:AddLabel("Menu bind")
-	:AddKeyPicker("MenuKeybind", { Default = "RightShift", NoUI = true, Text = "Menu keybind" })
+	:AddKeyPicker("MenuKeybind", { Default = "Delete", NoUI = true, Text = "Menu keybind" })
 
 MenuGroup:AddButton("Unload", function()
 	Library:Unload()
