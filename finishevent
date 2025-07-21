@@ -1,0 +1,8 @@
+local player = game.Players.LocalPlayer
+
+player["Holloween Event"]["Event Item 1"].Value = true
+player["Holloween Event"]["Event Item 2"].Value = true
+player["Holloween Event"]["Event Item 3"].Value = true
+player["Holloween Event"]["Event Challenge 1"].Value = 50
+player["Holloween Event"]["Event Challenge 2"].Value = 50
+player["Holloween Event"]["Event Challenge 3"].Value = 50
